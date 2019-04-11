@@ -51,6 +51,7 @@
   </head>
   <body>    
     <div id="instafeed"></div>
+    <div id="instagram-feed1" class="instagram_feed"></div>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
@@ -58,6 +59,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>
+    <script type="text/javascript" src="jquery.instagramFeed.min.js"></script>
     <script type="text/javascript">
         var userFeed = new Instafeed({
           get: 'user',
@@ -71,6 +73,25 @@
           links: false
         });
         userFeed.run();
+    </script>
+    <script type="text/javascript">
+      (function($){
+        $(window).on('load', function(){
+          $.instagramFeed({
+            'username': 'papermint.com.au',
+            'container': "#instagram-feed1",
+            'display_profile': true,
+            'display_biography': true,
+            'display_gallery': true,
+            'get_raw_json': false,
+            'callback': null,
+            'styling': true,
+            'items': 8,
+            'items_per_row': 4,
+            'margin': 1 
+          });
+        });
+      })(jQuery);
     </script>
   </body>
 </html>
